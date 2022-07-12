@@ -19,7 +19,7 @@ public class AlumnoAlta extends AppCompatActivity {
     private EditText txtNombre, txtMatricula, txtGrado;
     private ImageView imgAlumno;
     private TextView lblImagen;
-    private String carrera = "Ing. Tec. Información";
+    //private String carrera = "Ing. Tec. Información";
     private int posicion;
 
     @Override
@@ -51,7 +51,7 @@ public class AlumnoAlta extends AppCompatActivity {
                 if(alumno == null){
                     //agregar un nuevo alumno
                     alumno = new Alumno();
-                    alumno.setCarrera(carrera);
+                    alumno.setCarrera(txtGrado.getText().toString());
                     alumno.setMatricula(txtMatricula.getText().toString());
                     alumno.setNombre(txtNombre.getText().toString());
                     alumno.setImg(R.drawable.logo);
