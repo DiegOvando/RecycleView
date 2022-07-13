@@ -14,6 +14,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/txtId"
+            android:text="id">
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/lblMatricula"
             android:text="Matricula">
         </TextView>
@@ -64,6 +70,13 @@
             android:layout_height="match_parent"
             android:stretchColumns="*">
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Seleccionar foto"
+                android:id="@+id/btnFoto"
+                android:layout_span="2">
+            </Button>
             <TableRow>
 
                 <Button
@@ -71,6 +84,13 @@
                     android:layout_height="wrap_content"
                     android:text="Guardar"
                     android:id="@+id/btnSalir"
+                    android:layout_span="2">
+                </Button>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Borrar"
+                    android:id="@+id/btnBorrar"
                     android:layout_span="2">
                 </Button>
                 <Button
