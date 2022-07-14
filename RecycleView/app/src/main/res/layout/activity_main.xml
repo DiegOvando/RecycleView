@@ -13,12 +13,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Listado de Alumnos"
+            android:text="Listado de alumnos"
             android:layout_gravity="center"
             android:textAlignment="center"
-            android:layout_marginBottom="20dp">
-        </TextView>
-
+            android:layout_marginBottom="20dp"/>
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
@@ -27,21 +25,19 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/recId">
-            </androidx.recyclerview.widget.RecyclerView>
+                android:id="@+id/recId"
+                />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/agregarAlumno"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|end"
                 android:layout_margin="20dp"
                 android:backgroundTint="@color/cardview_light_background"
                 android:elevation="3dp"
-                app:borderWidth="2dp"
-                android:src="@drawable/agregar"
-                android:id="@+id/agregar">
-            </com.google.android.material.floatingactionbutton.FloatingActionButton>
-
+                android:src="@android:drawable/ic_input_add"
+                app:borderWidth="2dp" />
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
         <LinearLayout

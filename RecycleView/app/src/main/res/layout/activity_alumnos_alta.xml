@@ -11,100 +11,71 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtId"
-            android:text="id">
-        </TextView>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/lblMatricula"
-            android:text="Matricula">
-        </TextView>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/txtMatricula">
-        </EditText>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/lblNombre"
-            android:text="Nombre">
-        </TextView>
+            android:id="@+id/txtMatricula"
+            android:hint="Ingrese su matricula"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/txtNombre"
-            android:hint="Paterno - Materno - Nombre(s)">
-        </EditText>
-
+            android:hint="Ingrese su nombre completo"/>
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/logo"
-            android:id="@+id/imgAlumno">
-        </ImageView>
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:src="@drawable/perfil"
+            android:id="@+id/imgAlumno"
+            android:layout_gravity="center"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/txtGrado"
-            android:layout_gravity="center"
-            android:textSize="20dp"
-            android:hint="Grado, Licenciatura o Ing. ">
-        </EditText>
-
-        <TextView
+            android:hint="Licenciatura o Ingeniería"/>
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/lblFoto"
-            android:layout_gravity="center"
-            android:text="Url foto">
-        </TextView>
-
+            android:text="Seleccionar foto"
+            android:id="@+id/btnCargar"
+            android:layout_span="2"/>
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:stretchColumns="*">
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Seleccionar foto"
-                android:id="@+id/btnFoto"
-                android:layout_span="2">
-            </Button>
             <TableRow>
-
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Guardar"
                     android:id="@+id/btnSalir"
-                    android:layout_span="2">
-                </Button>
+                    android:layout_span="2"/>
+
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Borrar"
                     android:id="@+id/btnBorrar"
-                    android:layout_span="2">
-                </Button>
+                    android:layout_span="2"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Regresar"
                     android:id="@+id/btnRegresar"
-                    android:layout_span="2">
-                </Button>
-
+                    android:layout_span="2"/>
             </TableRow>
 
         </TableLayout>
 
 
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:id="@+id/txtURL"/>
+
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

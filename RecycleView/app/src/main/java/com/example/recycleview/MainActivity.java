@@ -14,12 +14,13 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class MainActivity extends AppCompatActivity {
+import modelo.AlumnoDbHelper;
+import modelo.AlumnosDb;
 
+public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private FloatingActionButton fbtnAgregar;
-    private Aplicacion app;
     private Button btnCerrar;
     private Alumno alumno;
     private int posicion = -1;
@@ -30,10 +31,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnCerrar = (Button) findViewById(R.id.btnCerrar);
-        fbtnAgregar = (FloatingActionButton) findViewById(R.id.agregar);
+        fbtnAgregar = findViewById(R.id.agregarAlumno);
 
         Aplicacion app = (Aplicacion) getApplication();
-        recyclerView = (RecyclerView) findViewById(R.id.recId);
+        recyclerView = findViewById(R.id.recId);
         recyclerView.setAdapter(app.getAdaptador());
 
         layoutManager = new LinearLayoutManager(this);
@@ -45,12 +46,12 @@ public class MainActivity extends AppCompatActivity {
                 posicion = recyclerView.getChildAdapterPosition(v);
                 alumno = app.getAlumnos().get(posicion);
 
-                Intent intent = new Intent(MainActivity.this, AlumnoAlta.class);
+                Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+                intent.setClass(MainActivity.this, AlumnoAlta.class);
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("alumno",alumno);
-                intent.putExtra("posicion",posicion);
+                bundle.putSerializable("alumno", alumno);
+                intent.putExtra("posicion", posicion);
                 intent.putExtras(bundle);
-
                 startActivityForResult(intent, 1);
             }
         });
@@ -58,12 +59,12 @@ public class MainActivity extends AppCompatActivity {
         fbtnAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Nuevo", Toast.LENGTH_SHORT).show();
                 alumno = null;
-                Intent intent = new Intent(MainActivity.this, AlumnoAlta.class);
+                Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("alumno",alumno);
-                bundle.putInt("posicion",posicion);
+                intent.setClass(MainActivity.this, AlumnoAlta.class);
+                bundle.putSerializable("alumno", alumno);
+                bundle.putInt("posicion", posicion);
                 intent.putExtras(bundle);
 
                 startActivityForResult(intent, 0);
@@ -84,14 +85,13 @@ public class MainActivity extends AppCompatActivity {
                 confirmar.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-
                     }
                 });
                 confirmar.show();
             }
         });
     }
-    @Override
+
     protected void onActivityResult(int requestCode, int resultCode, Intent intent){
         super.onActivityResult(requestCode, resultCode, intent);
 
